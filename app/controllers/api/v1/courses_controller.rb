@@ -9,9 +9,9 @@ class Api::V1::CoursesController < ApplicationController
     @course = Course.new(course_params)
 
     if @course.save
-      render json: Success.new("Course Created", "ok", 200).serialized_json
+      render json: CourseSerializer.new(@course).serialized_json
     else
-      render json: Error.new(@course.errors, "unprocessed", 422).serialized_json
+      render json: ErrorSerializer.new(@course.errors, 422).serialized_json
     end
   end
 
