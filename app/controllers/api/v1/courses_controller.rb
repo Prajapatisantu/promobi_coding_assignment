@@ -2,7 +2,7 @@ class Api::V1::CoursesController < ApplicationController
 
   def index
     @course = Course.includes(:tutors)
-    render json: @course, include: :tutors
+    render json: CourseSerializer.new(@course).serialized_json
   end
 
   def create
