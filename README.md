@@ -7,4 +7,4 @@ application up and running.
 2. bundle install or bundle
 3. rails db:create
 4. rails s
-5. rspec    --- to run test cases 
+5. rspec                 --- to run test cases 
